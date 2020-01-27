@@ -1,3 +1,10 @@
+#nesse script dividimos a meta-base já balanceada em conjuntos de treinamento e teste de forma aleatória, 
+#onde teste contém 20% das amostras. Em seguida induzimos modelos usando os algoritmos RandomForest, MLPC e SVC
+#e avaliamos suas predições usando matrizes de confusão e relatórios de classificação. 
+
+
+
+
 import pandas as pd
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.svm import SVC
