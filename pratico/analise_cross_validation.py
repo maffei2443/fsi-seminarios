@@ -32,11 +32,11 @@ X = scaler.fit_transform(X)
 
 #classificadores que serão testados
 rfc = RandomForestClassifier(n_estimators = 200)
-clf = svm.SVC()
 knn = KNeighborsClassifier(n_neighbors = 5)
+clf = svm.SVC()
 
 #avaliação dos algoritmos usando validação cruzada com 10 folds
 scores.append(cross_val_score(rfc, X, y, cv=10).mean())
-scores.append(cross_val_score(clf, X, y, cv=10).mean())
 scores.append(cross_val_score(knn, X, y, cv=10).mean())
+scores.append(cross_val_score(clf, X, y, cv=10).mean())
 print(scores)
