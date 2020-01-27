@@ -1,3 +1,7 @@
+#nesse script é usada a validação cruzada com 10 folds para avaliar os algortimos RandomForest, SVC e KNN
+#sobre a meta-base de dados balanceada
+
+
 import pandas as pd
 import collections
 from sklearn.ensemble import RandomForestClassifier
