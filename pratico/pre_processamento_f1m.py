@@ -3,6 +3,7 @@
 #criando o atributo "Class", que corresponde ao algortimo com melhor score f1m para um dado objeto,
 #excluindo as colunas referentes à métrica f1m (depois de atribuidas as classes) e, por fim, balanceando
 #a base a partir da retirada de amostras com rótulo RF.f1m e duplicação de amostras com rótulo kNN.f1m.
+# Distribuição das classes na base: {'SVM.f1m': 72, 'ANN.f1m': 68, 'RF.f1m': 60, 'kNN.f1m': 60, 'C4.5.f1m': 56}
 
 
 
