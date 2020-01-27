@@ -21,6 +21,7 @@ maior = 0
 RF_samples = 0
 kNN_samples = 0
 k = 0
+
 #pra cada linha, pega o maior valor entre os desempenhos e cria uma nova coluna chamada "classe"
 #que recebe o algortimo correspondente a esse maior desempenho
 for i in data.index:
@@ -39,18 +40,6 @@ for i in data.index:
 #retira as colunas referentes ao score f1m nos diferentes algoritmos (já que ela já foi usada para rotulaçao)
 data = data.drop(['ANN.acc', 'C4.5.acc', 'kNN.acc', 'SVM.acc'], axis =1)
 
-#retira algumas (60) amostras com rótulo RF
-"""for i in data.index:
-    if (data.loc[i, "Class"] == 'RF.f1m'):
-        RF_samples += 1
-        if RF_samples > 60:
-            data = data.drop(i, axis = 0)
-
-#duplica algumas (30) amostras com rótulo kNN
-for i in data.index:
-    if (data.loc[i, "Class"] == 'kNN.f1m') & (kNN_samples < 30):
-            data = data.append(data.loc[i])
-            kNN_samples += 1"""
 
 #exporta a base modificada
 data.to_csv("data_classes.csv", index = False, encoding = "UTF-8")
