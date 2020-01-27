@@ -1,5 +1,5 @@
 #nesse script é usada a validação cruzada com 10 folds para avaliar os algortimos RandomForest, SVC e KNN
-#sobre a meta-base de dados balanceada
+#sobre a meta-base de dados normalizada
 
 
 import pandas as pd
@@ -22,6 +22,9 @@ data = pd.read_csv("data_classes.csv")
 #divide a base em atributos e as classes
 X = data.drop("Class", axis = 1)
 y = data["Class"]
+
+#printa a proporção de objetos de cada classe
+print(collections.Counter(y))
 
 #normaliza os atributos
 scaler = StandardScaler()
