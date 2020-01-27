@@ -2,7 +2,7 @@
 #retirando a coluna do algoritmo RF, criando o atributo "Class", que corresponde ao algortimo com melhor acurácia
 # para um dado objeto e excluindo as colunas referentes à métrica acc (depois de atribuidas as classes). Além disso,
 #as amostras com rótulo KNN foram duplicadas e algumas amostras com rótulo SVM foram removidas.
-#Distribuição de classes na base: {'C4.5.acc': 106, 'ANN.acc': 94, 'kNN.acc': 78, 'SVM.acc': 60}
+#Distribuição de classes na base: {'C4.5.acc': 106, 'ANN.acc': 94, 'kNN.acc': 78, 'SVM.acc': 78}
 
 
 
@@ -39,11 +39,11 @@ for i in data.index:
     count = 0
 
 
-#retira algumas (60) amostras com rótulo SVM
+#retira algumas (78) amostras com rótulo SVM
 for i in data.index:
     if (data.loc[i, "Class"] == 'SVM.acc'):
         SVM_samples += 1
-        if SVM_samples > 60:
+        if SVM_samples > 78:
             data = data.drop(i, axis = 0)
 
 #duplica algumas (39) amostras com rótulo kNN
