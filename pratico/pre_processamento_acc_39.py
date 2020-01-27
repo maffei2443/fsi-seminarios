@@ -2,7 +2,8 @@
 #esse scrip faz o tratamento da meta-base retirando as colunas referentes às métricas f1m e auc dos algoritmos,
 #retirando a coluna do algoritmo RF, criando o atributo "Class", que corresponde ao algortimo com melhor acurácia
 # para um dado objeto e excluindo as colunas referentes à métrica acc (depois de atribuidas as classes). Além disso,
-#as amostras com rótulo KNN foram triplicadas para balancear a base.
+#foram removidos objetos de diferentes classes para igualar o número de objetos por classe.
+#Distribuição de classes na base: {'SVM.acc': 39, 'C4.5.acc': 39, 'ANN.acc': 39, 'kNN.acc': 39}
 
 
 
