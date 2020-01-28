@@ -1,0 +1,82 @@
+Resultados:
+
+1. Usando o F1m (com todas as classes) - pre_process_f1m.py
+
+      Base original
+        {'RF.f1m': 156, 'SVM.f1m': 72, 'ANN.f1m': 68, 'C4.5.f1m': 56, 'kNN.f1m': 30}
+        Acurácia: 0.42 train_test_split
+                  0.42 cross_validation-10
+
+      Base com -RF e 2x kNN
+        {'SVM.f1m': 72, 'ANN.f1m': 68, 'RF.f1m': 60, 'kNN.f1m': 60, 'C4.5.f1m': 56}
+        Acurácia:  0.53 train_test_split
+                   0.51 cross_validation-10
+
+
+2.Usando acc (com todas as classes) - pre_process_acc.py
+
+      Base original
+        {'RF.acc': 155, 'SVM.acc': 95, 'ANN.acc': 64, 'C4.5.acc': 53, 'kNN.acc': 18}
+        Acurácia:  0.54-0.40 train_test_split
+                   0.46 cross_validation-10
+
+      Base -RF e 2x kNN
+        {'SVM.acc': 95, 'ANN.acc': 64, 'RF.acc': 60, 'C4.5.acc': 53, 'kNN.acc': 36}
+        Acurácia:  0.59-0.51 train_test_split
+                   0.46 cross_validation-10
+
+
+3. Usando a acc sem RF
+
+      Base original - pre_process_acc_semRF.py
+
+        {'SVM.acc': 150, 'C4.5.acc': 106, 'ANN.acc': 94, 'kNN.acc': 39}
+        Acurácia:  0.48 train_test_split
+                   0.48 cross_validation-10
+
+      Base com 39 objetos de cada classes - pre_process_acc_semRF_39.py
+        {'SVM.acc': 39, 'C4.5.acc': 39, 'ANN.acc': 39, 'kNN.acc': 39}
+        Acurácia:  0.56-0.34 train_test_split
+                   0.35 cross_validation-10
+
+      Base com 2x kNN - pre_process_acc_semRF_2x.py
+        {'SVM.acc': 150, 'C4.5.acc': 106, 'ANN.acc': 94, 'kNN.acc': 78}
+        Acurácia: 0.63-0.53 train_test_split
+                  0.62 cross_validation-10
+
+      Base com -SVM e 2x kNN - pre_process_acc_semRF_-2x.py
+        {'C4.5.acc': 106, 'ANN.acc': 94, 'kNN.acc': 78, 'SVM.acc': 78}
+        Acurácia: 0.63-0.52 train_test_split
+                  0.62 cross_validation-10
+
+
+4. Usando a acc sem SVM - pre_process_acc_semSVM.py
+
+      Base original
+        {'RF.acc': 204, 'ANN.acc': 90, 'C4.5.acc': 67, 'kNN.acc': 27}
+        Acurácia:  0.64-0.56 train_test_split
+                   0.57 cross_validation-10
+
+
+5. Usando a acc sem kNN - pre_process_acc_semkNN.py
+
+      Base original
+        {'RF.acc': 162, 'SVM.acc': 101, 'ANN.acc': 67, 'C4.5.acc': 55}
+        Acurácia:  0.54-0.41 train_test_split
+                   0.47 cross_validation-10
+
+
+6. Usando a acc sem C4.5 - pre_process_acc_semC4.5.py
+
+      Base original
+        {'RF.acc': 183, 'SVM.acc': 108, 'ANN.acc': 77, 'kNN.acc': 18}
+        Acurácia:  0.62-0.50 train_test_split
+                   0.53 cross_validation-10
+
+
+7. Usando a acc sem ANN - pre_process_acc_semANN.py
+
+      Base original
+        {'RF.acc': 185, 'SVM.acc': 118, 'C4.5.acc': 60, 'kNN.acc': 24}
+        Acurácia:  0.57-0.51 train_test_split
+                   0.55 cross_validation-10
