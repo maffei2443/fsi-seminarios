@@ -8,14 +8,13 @@ import numpy as np
 import pandas as pd
 import pandas
 
-def drop_draw(data: pandas.DataFrame , columns = ['ANN.acc', 'kNN.acc', 'SVM.acc', 'RF.acc']):
+def drop_draw(data: pandas.DataFrame , columns = ['ANN.acc', 'kNN.acc', 'C4.5.acc', 'SVM.acc', 'RF.acc']):
   """
     Recebe um dataframe e dropa linhas cujo valor máximo nas colunas especificadas
     apareça mais de uma vez nelas.
   """
   for i in data.index:
     maior = np.max( max(data.loc[i, columns]) )
-    count = 0
     for j in columns:
         if data.loc[i,j] == maior:
             count += 1
@@ -23,6 +22,7 @@ def drop_draw(data: pandas.DataFrame , columns = ['ANN.acc', 'kNN.acc', 'SVM.acc
         if count > 1:
             data.drop(i, axis = 0, inplace=True)
             count = 0
+    count = 0
             break
   return data
 
