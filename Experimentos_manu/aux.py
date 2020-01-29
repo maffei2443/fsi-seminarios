@@ -69,7 +69,6 @@ def preprocess_default(data: pandas.DataFrame, score_columns:list = []):
   data = drop_draw_set_class(data, score_columns) if score_columns else drop_draw_set_class(data)
   return data
 
-
-
-
-
+def print_counter(data: pandas.DataFrame):
+    for i in Counter(data).items():
+     print(*i, sep=' -> ')
