@@ -96,7 +96,9 @@ def show_most_important_features(X: pd.DataFrame, features_list: list):
   for ft_lis in features_list:
       x=[]
       y=[]
-      for i, j in sorted(zip(X.columns[1:], ft_lis), key = lambda x : x[1], reverse=True)[:7]:
+      for i, j in sorted(
+        zip(X.columns[1:], ft_lis), 
+        key = lambda x : x[1], reverse=True)[:7]:
           x.append(i)
           y.append(j)
       df = pd.DataFrame({'lab':x, 'val':y})
