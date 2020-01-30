@@ -8,6 +8,9 @@ import numpy as np
 import pandas as pd
 import pandas
 from collections import Counter
+from sklearn.metrics import precision_recall_fscore_support
+from sklearn.metrics import confusion_matrix, accuracy_score, \
+  precision_score,recall_score, f1_score
 
 
 
@@ -70,5 +73,22 @@ def preprocess_default(data: pandas.DataFrame, score_columns:list = []):
   return data
 
 def print_counter(data: pandas.DataFrame):
-    for i in Counter(data).items():
-     print(*i, sep=' -> ')
+  for i in Counter(data).items():
+    print(*i, sep=' -> ')
+
+def show_metrics(y_true, y_pred):
+  print(f"accuracy: {np.sum(y_true == y_pred) / len(y_pred)}")
+  print(f"accuracy: {accuracy_score(y_true=y_true, y_pred=y_pred)}")
+  print("precision: ", 
+    precision_score(y_true=y_true, y_pred=y_pred, average='macro', zero_division=0)
+  )
+  print("recall: ", 
+    recall_score(y_true=y_true, y_pred=y_pred, average='macro', zero_division=0)
+  )
+  print("f1_score: ", 
+    f1_score(y_true=y_true, y_pred=y_pred, average='macro', zero_division=0)
+  )
+  print("precision_recall_fscore_support : ")
+  print(
+    "\t", *precision_recall_fscore_support(y_true=y_true,
+      y_pred=y_pred, zero_division=0), sep= '\n\t')
