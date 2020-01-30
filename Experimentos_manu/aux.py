@@ -77,7 +77,6 @@ def print_counter(data: pandas.DataFrame):
     print(*i, sep=' -> ')
 
 def show_metrics(y_true, y_pred):
-  print(f"accuracy: {np.sum(y_true == y_pred) / len(y_pred)}")
   print(f"accuracy: {accuracy_score(y_true=y_true, y_pred=y_pred)}")
   print("precision: ", 
     precision_score(y_true=y_true, y_pred=y_pred, average='macro', zero_division=0)
@@ -92,3 +91,13 @@ def show_metrics(y_true, y_pred):
   print(
     "\t", *precision_recall_fscore_support(y_true=y_true,
       y_pred=y_pred, zero_division=0), sep= '\n\t')
+
+def show_most_important_features(X: pd.DataFrame, features_list: list):
+  for ft_lis in features_list:
+      x=[]
+      y=[]
+      for i, j in sorted(zip(X.columns[1:], ft_lis), key = lambda x : x[1], reverse=True)[:7]:
+          x.append(i)
+          y.append(j)
+      df = pd.DataFrame({'lab':x, 'val':y})
+      ax = df.plot.barh(x='lab', y='val', rot=0)
